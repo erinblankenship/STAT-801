@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Section 2 Probability.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Basics and Probability Distributions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Section 2 Probability.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability Basics and Probability Distributions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,6 +126,9 @@ window.Quarto = {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Stat 801A Notes</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Stat-801A-Notes.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -138,25 +141,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Goals for STAT 801A</span></span></a>
+ <span class="menu-text">Course Goals for STAT 801A</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Section 1 Introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Data and the Scientific Method</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data and the Scientific Method</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Section 2 Probability.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Basics and Probability Distributions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability Basics and Probability Distributions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Section 3 Sampling Distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sampling Distibutions and Foundations of Statistical Inference</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sampling Distibutions and Foundations of Statistical Inference</span></span></a>
   </div>
 </li>
     </ul>
@@ -169,13 +172,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#probability-basics" id="toc-probability-basics" class="nav-link active" data-scroll-target="#probability-basics"><span class="header-section-number">3.1</span> Probability Basics</a></li>
-  <li><a href="#random-variables-and-probability-distributions" id="toc-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#random-variables-and-probability-distributions"><span class="header-section-number">3.2</span> Random Variables and Probability Distributions</a></li>
-  <li><a href="#special-probability-distributions" id="toc-special-probability-distributions" class="nav-link" data-scroll-target="#special-probability-distributions"><span class="header-section-number">3.3</span> Special Probability Distributions</a>
+  <li><a href="#probability-basics" id="toc-probability-basics" class="nav-link active" data-scroll-target="#probability-basics"><span class="header-section-number">2.1</span> Probability Basics</a></li>
+  <li><a href="#random-variables-and-probability-distributions" id="toc-random-variables-and-probability-distributions" class="nav-link" data-scroll-target="#random-variables-and-probability-distributions"><span class="header-section-number">2.2</span> Random Variables and Probability Distributions</a></li>
+  <li><a href="#special-probability-distributions" id="toc-special-probability-distributions" class="nav-link" data-scroll-target="#special-probability-distributions"><span class="header-section-number">2.3</span> Special Probability Distributions</a>
   <ul class="collapse">
-  <li><a href="#the-binomial-distribution" id="toc-the-binomial-distribution" class="nav-link" data-scroll-target="#the-binomial-distribution"><span class="header-section-number">3.3.1</span> The Binomial Distribution</a></li>
-  <li><a href="#the-poisson-distribution" id="toc-the-poisson-distribution" class="nav-link" data-scroll-target="#the-poisson-distribution"><span class="header-section-number">3.3.2</span> The Poisson Distribution</a></li>
-  <li><a href="#the-normal-distribution" id="toc-the-normal-distribution" class="nav-link" data-scroll-target="#the-normal-distribution"><span class="header-section-number">3.3.3</span> The Normal Distribution</a></li>
+  <li><a href="#the-binomial-distribution" id="toc-the-binomial-distribution" class="nav-link" data-scroll-target="#the-binomial-distribution"><span class="header-section-number">2.3.1</span> The Binomial Distribution</a></li>
+  <li><a href="#the-poisson-distribution" id="toc-the-poisson-distribution" class="nav-link" data-scroll-target="#the-poisson-distribution"><span class="header-section-number">2.3.2</span> The Poisson Distribution</a></li>
+  <li><a href="#the-normal-distribution" id="toc-the-normal-distribution" class="nav-link" data-scroll-target="#the-normal-distribution"><span class="header-section-number">2.3.3</span> The Normal Distribution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -185,7 +188,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Basics and Probability Distributions</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability Basics and Probability Distributions</span></h1>
 </div>
 
 
@@ -215,8 +218,8 @@ window.Quarto = {
 </p>
 <p>The value we calculated is a <strong>p-value</strong>: the (empirical) probability of observing what we did in the data (or something even more extreme), under the assumption that the null hypothesis is true. For better or worse, science runs on p-values.</p>
 <p>In this section, we’ll see some basic probability theory and calculations, as well as probability distributions.</p>
-<section id="probability-basics" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="probability-basics"><span class="header-section-number">3.1</span> Probability Basics</h2>
+<section id="probability-basics" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="probability-basics"><span class="header-section-number">2.1</span> Probability Basics</h2>
 <p>When we are uncertain about an outcome’s occurrence (e.g., whether a coin will come up heads or tails, the number of dots observed on the roll of a die, whether or not the bus will be late), we typically quantify this uncertainty with a probability. Probability is the foundation upon which all of statistics is built, and it a provides a framework for modeling populations, experiments, and almost anything that could be considered a random phenomenon.</p>
 <p>A <strong>sample space</strong>, denoted by <span class="math inline">\(S\)</span>, is comprised of all possible outcomes of a random phenomenon.</p>
 <p>An <strong>event</strong> is a collection of possible outcomes. Each event <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(S\)</span>.</p>
@@ -500,8 +503,8 @@ Any function P(<span class="math inline">\(\cdot\)</span>) that satisfies these 
 <br>
 </p>
 </section>
-<section id="random-variables-and-probability-distributions" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">3.2</span> Random Variables and Probability Distributions</h2>
+<section id="random-variables-and-probability-distributions" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">2.2</span> Random Variables and Probability Distributions</h2>
 <p>Typically we are interested in a numerical measurement of the outcome of a random experiment. For example, we might want to know the number of insects treated with a dose of a new insecticide that are killed. In this case, the outcome is the survival status of each dosed insect and the numerical measurement we’re interested in is the number that died. However, the observed number varies depending on the actual result of the experiment. This type of variable is called a <strong>random variable.</strong></p>
 <p><strong>Definition:</strong> A <strong>random variable</strong> is a function that associates a real number with each element in the sample space. That is, a random variable is a function from a sample space, <span class="math inline">\(S\)</span>, into the real numbers.</p>
 <p><strong>Example:</strong> Suppose we roll two dice and we’re interested in the number of 1s that are thrown.</p>
@@ -889,11 +892,11 @@ f(x) = \left \{ \begin{array}{ll} 1 &amp; 0 \leq x \leq 1 \\ 0 &amp; x &lt; 0, x
 </p>
 <p>The correlation is unitless, and must be <span class="math inline">\(-1 \leq \rho \leq 1\)</span>. Just like covariance, if two random variables are independent, their correlation will be 0.</p>
 </section>
-<section id="special-probability-distributions" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="special-probability-distributions"><span class="header-section-number">3.3</span> Special Probability Distributions</h2>
+<section id="special-probability-distributions" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="special-probability-distributions"><span class="header-section-number">2.3</span> Special Probability Distributions</h2>
 <p>Earlier, we mentioned that some probability distributions can be written as mathematical functions. We’re going to discuss some probability distributions that commonly arise in data analysis.</p>
-<section id="the-binomial-distribution" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="the-binomial-distribution"><span class="header-section-number">3.3.1</span> The Binomial Distribution</h3>
+<section id="the-binomial-distribution" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="the-binomial-distribution"><span class="header-section-number">2.3.1</span> The Binomial Distribution</h3>
 <p>In some studies, the variable of interest only has two potential outcomes: success and failure. These could be died/survived, yes/no, occurred/did not occur, picked the good puppet/picked the bad puppet. Under some very specific conditions, variables like these follow a theoretical probability distribution called the <strong>binomial distribution.</strong></p>
 <p>Here are the conditions we need:</p>
 <ol type="1">
@@ -953,8 +956,8 @@ f(x) = \left \{ \begin{array}{ll} 1 &amp; 0 \leq x \leq 1 \\ 0 &amp; x &lt; 0, x
 <br>
 </p>
 </section>
-<section id="the-poisson-distribution" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="the-poisson-distribution"><span class="header-section-number">3.3.2</span> The Poisson Distribution</h3>
+<section id="the-poisson-distribution" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="the-poisson-distribution"><span class="header-section-number">2.3.2</span> The Poisson Distribution</h3>
 <p>The <strong>Poisson distribution</strong> models count data, typically the number of events observed for a particular unit of time or space. For example, the Poisson can be used to model variables like:</p>
 <ul>
 <li><p>the number of hits to a website per minute</p></li>
@@ -1033,8 +1036,8 @@ f(x) = \left \{ \begin{array}{ll} 1 &amp; 0 \leq x \leq 1 \\ 0 &amp; x &lt; 0, x
 <br>
 </p>
 </section>
-<section id="the-normal-distribution" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="the-normal-distribution"><span class="header-section-number">3.3.3</span> The Normal Distribution</h3>
+<section id="the-normal-distribution" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="the-normal-distribution"><span class="header-section-number">2.3.3</span> The Normal Distribution</h3>
 <p>The most commonly used continuous distribution (maybe the most commonly used distribution, period) is the <strong>normal distribution</strong>. It’s commonly used because</p>
 <ul>
 <li></li>
@@ -1618,12 +1621,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Section 1 Introduction.html" class="pagination-link" aria-label="Introduction to Data and the Scientific Method">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Data and the Scientific Method</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data and the Scientific Method</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Section 3 Sampling Distributions.html" class="pagination-link" aria-label="Sampling Distibutions and Foundations of Statistical Inference">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sampling Distibutions and Foundations of Statistical Inference</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sampling Distibutions and Foundations of Statistical Inference</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

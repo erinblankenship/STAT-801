@@ -1,4 +1,4 @@
-# Course Goals for STAT 801A
+# Course Goals for STAT 801A {-}
 
 STAT 801A is an introduction to research methods, and how statistical methods may be used to answer research questions. By the end of the course, you will:
 
