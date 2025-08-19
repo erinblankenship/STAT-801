@@ -1,0 +1,10 @@
+---
+pagetitle: "Section 3: Sampling Distributions"
+format: 
+  html: default
+  pdf: default
+editor: visual
+self-contained-math: true
+---
+
+# Sampling Distibutions and Foundations of Statistical Inference 
