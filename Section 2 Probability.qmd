@@ -743,7 +743,7 @@ If $X$ follows a binomial distribution with **parameter** $p$, then
 
 Right now, we'll use the binomial distribution to calculate some probabilities assuming a specific value for $p$, but inference for scenarios like this typically focuses on testing hypotheses about $p$ (like the babies!) and estimating $p$.
 
-**Example:** A new variety of turfgrass has been developed for use on golf courses, with the goal of obtaining a germination rate of 85\%. To evaluate the grass, 20 seeds are planted in a greenhouse so that each seed will be exposed to identical conditions. If the 85\% germination rate is correct, what is the probably that 18 or more seeds will germinate?
+**Example:** A new variety of turfgrass has been developed for use on golf courses, with the goal of obtaining a germination rate of 85\%. To evaluate the grass, 20 seeds are planted in a greenhouse so that each seed will be exposed to identical conditions. If the 85\% germination rate is correct, what is the probability that 18 or more seeds will germinate?
 
 \
 \
@@ -811,7 +811,7 @@ The Poisson distribution has a couple of interesting features:
 
 \newpage
 
-**Example:** Suppose grasshoppers are distributed at random in a large field according to a Poisson distribtuion with $\lambda=2$ grasshoppers per square meter.
+**Example:** Suppose grasshoppers are distributed at random in a large field according to a Poisson distribution with $\lambda=2$ grasshoppers per square meter.
 
 - Find the probability that no grasshoppers will be found in a randomly selected square meter.
 
