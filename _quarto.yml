@@ -2,9 +2,6 @@ project:
   type: book
   output-dir: docs
 
-header-includes:
-      - \usepackage{float}
-      - \floatplacement{table}{H}  
 
 editor: visual
 book: 
@@ -21,8 +18,8 @@ format:
   html: default
   pdf:  
     header-includes:
-        - \usepackage{float}
-        - \floatplacement{table}{H}  
+      - \usepackage{float}
+      - \floatplacement{table}{H}  
     output-file: pdf-book
     fontsize: 11pt
     geometry: 
