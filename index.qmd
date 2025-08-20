@@ -21,3 +21,13 @@ STAT 801A is an introduction to research methods, and how statistical methods ma
 -  use statistical software appropriately.
 
 -  be able to clearly write up the results of an analysis.
+
+```{r}
+#| eval: true
+#| include: false
+
+quarto::quarto_render(input="syllabus fall 2025.qmd")
+file.copy("syllabus fall 2025.html","docs/")
+file.copy("syllabus-fall-2025.pdf","docs/")
+file.copy("syllabus fall 2025_files","docs/",recursive=TRUE)
+```
