@@ -7,7 +7,7 @@ editor: visual
 self-contained-math: true
 ---
 
-# Sampling Distibutions and Foundations of Statistical Inference
+# Sampling Distributions and Foundations of Statistical Inference
 
 As we've seen in the last two chapters, variability is natural and expected. We expect to see variability in observations, which implies there will also be variability in summary statistics. We've seen this already:
 
