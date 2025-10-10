@@ -1,4 +1,4 @@
-# Course Goals for STAT 801A {-}
+# Course Goals for STAT 801A {.unnumbered}
 
 STAT 801A is an introduction to research methods, and how statistical methods may be used to answer research questions. By the end of the course, you will:
 
@@ -14,13 +14,13 @@ STAT 801A is an introduction to research methods, and how statistical methods ma
 
 -   realize that the most appropriate statistical inference method changes based on the explanatory variable(s), response variable, and goals of the study.
 
--   be able to calculate and interpret statistical analyses  for studies in which there is one (or fewer) explanatory variables.
+-   be able to calculate and interpret statistical analyses for studies in which there is one (or fewer) explanatory variables.
 
--  be able to sketch a skeleton ANOVA table from a description of the study.
+-   be able to sketch a skeleton ANOVA table from a description of the study.
 
--  use statistical software appropriately.
+-   use statistical software appropriately.
 
--  be able to clearly write up the results of an analysis.
+-   be able to clearly write up the results of an analysis.
 
 ```{r}
 #| eval: true

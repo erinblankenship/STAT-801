@@ -375,7 +375,7 @@ The natural fix is to use $s$ (the sample standard deviation) in place of $\sigm
 
 But this leads to yet another complication: the normal distribution isn't quite right. Instead, we end up with a distribution that has heavier tails than the normal. Instead, we use the $t$ distribution. The $t$ distribution has a single parameter, the degrees of freedom ($df$). The degrees of freedom determines the shape of the $t$, with the distribution getting closer and closer to the normal as the $df$ increase.
 
-![Standard normal compared to the t distribution with various df](t vs z.jpg){fig-alt="The graph shows that as df increases, the t distribution approaches the standard normal." width="500"}
+![Standard normal compared to the t distribution with various df](t%20vs%20z.jpg){fig-alt="The graph shows that as df increases, the t distribution approaches the standard normal." width="500"}
 
 In the scenario of a single mean, $df=n-1$ but this will change as the scenario gets more complicated.
 
@@ -384,7 +384,6 @@ We can get $t$ probabilities and quantiles using the R functions
 -   `pt(x, df=)`
 
 -   `qt(prob, df=)`
-
 
 So, if we're interested in calculating an interval estimate for a mean
 
@@ -398,8 +397,6 @@ Back to the potato chips example. Are the conditions for the Central Limit Theor
 \
 
 We'll calculate a 95% confidence interval.
-
-
 
 \newpage
 

@@ -383,7 +383,7 @@ Again, these are statistics because they're calculated only from our sample of $
 \
 \
 
-If we were to take a different sample of size $n=9$, we'd likely get different statistics. Let's try it. 
+If we were to take a different sample of size $n=9$, we'd likely get different statistics. Let's try it.
 
 \
 \
@@ -482,7 +482,7 @@ It's important to keep in mind the population of interest, and whether we employ
 ## Step 6: Look back and ahead
 
 This step involves
- 
+
 \
 \
 \
@@ -499,13 +499,6 @@ This step involves
 \
 \
 
-As we progress through the semester, Step 4 is where we'll spend most of our time. We'll consider different types of variables, different research goals, different study designs, and how we can use the data to draw inferences to a larger population. 
+As we progress through the semester, Step 4 is where we'll spend most of our time. We'll consider different types of variables, different research goals, different study designs, and how we can use the data to draw inferences to a larger population.
 
 As we saw earlier, in order to draw those inferences we need to understand and be able to quantify how much variability we expect to see in the sample statistic. We also need more precise definitions and rules around the uncertainty associated with data. In the next section, we'll discuss the basics of probability and probability distributions.
-
-
-
-
-
-
-
