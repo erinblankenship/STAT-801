@@ -414,7 +414,7 @@ window.Quarto = {
 <li>Cell(1,3) (obs - exp)<span class="math inline">\(^2\)</span>/exp = <span class="math inline">\((20 - 25)^2/(25) = (-5)^2/25 = 1\)</span></li>
 <li>Cell(2,1) (obs - exp)<span class="math inline">\(^2\)</span>/exp = <span class="math inline">\((124 - 133.16)^2/(133.16) = (-9.16)^2/133.16 = 0.6301\)</span></li>
 <li>Cell(2,2) (obs - exp)<span class="math inline">\(^2\)</span>/exp = <span class="math inline">\((139 - 134.84)^2/(134.84) = 4.16^2/134.84 = 0.1283\)</span></li>
-<li>Cell(2,3) (obs - exp)<span class="math inline">\(^2\)</span>/exp = $(139 - 134)^2/(134) = 5^2/134 =0.3731 $</li>
+<li>Cell(2,3) (obs - exp)<span class="math inline">\(^2\)</span>/exp = <span class="math inline">\((139 - 134)\^2/(134) = 5\^2/134 =0.3731\)</span></li>
 </ul>
 <p><br>
 <br>
@@ -586,7 +586,7 @@ X-squared = 28.949, df = 4, p-value = 8.007e-06</code></pre>
 <section id="quantitative-response" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="quantitative-response"><span class="header-section-number">5.2</span> Quantitative Response</h2>
 <p>We’re going to start this section by considering an example. The data are in the file ‘mice.csv.’</p>
-<p><strong>Example:</strong> These data come from an experiment to determine if exercise confers some resilience to stress. Mice were randomly assigned to either an enriched environment (exercise wheel) or standard environment, and spent three weeks there. After that time, they were exposed for five minutes per day for two weeks to a ``mouse bully’’–a mouse very strong, aggressive, and territorial. After those two weeks, anxiety in the mice was measured, as amount of time hiding in dark compartment. Mice that are more anxious spend more time in darkness. We want to determine if there is a difference in time spent in darkness for the two groups of mice.</p>
+<p><strong>Example:</strong> These data come from an experiment to determine if exercise confers some resilience to stress. Mice were randomly assigned to either an enriched environment (exercise wheel) or standard environment, and spent three weeks there. After that time, they were exposed for five minutes per day for two weeks to a “mouse bully”–a mouse very strong, aggressive, and territorial. After those two weeks, anxiety in the mice was measured, as amount of time hiding in a dark compartment. Mice that are more anxious spend more time in darkness. We want to determine if there is a difference in time spent in darkness for the two groups of mice.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mice<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"mice.csv"</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -612,35 +612,23 @@ X-squared = 28.949, df = 4, p-value = 8.007e-06</code></pre>
 </p>
 <p>Let’s first plot the data</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/mice-data-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>It definitely looks like there’s a difference between the groups! We can find the group means and standard deviations. We’ll also add the sample means to the plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(mice<span class="sc">$</span>Time, <span class="at">by=</span><span class="fu">list</span>(mice<span class="sc">$</span>Envr), <span class="at">FUN=</span>mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(mice<span class="sc">$</span>Time, <span class="at">by=</span><span class="fu">list</span>(mice<span class="sc">$</span>Envr), <span class="at">FUN=</span>mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Group.1        x
 1  Enrich 217.4286
 2     Std 438.7143</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(mice<span class="sc">$</span>Time, <span class="at">by=</span><span class="fu">list</span>(mice<span class="sc">$</span>Envr), <span class="at">FUN=</span>sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(mice<span class="sc">$</span>Time, <span class="at">by=</span><span class="fu">list</span>(mice<span class="sc">$</span>Envr), <span class="at">FUN=</span>sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Group.1        x
 1  Enrich 47.52844
@@ -651,14 +639,14 @@ X-squared = 28.949, df = 4, p-value = 8.007e-06</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/mice-data-means-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>We’re testing H<span class="math inline">\(_0: \mu_1 = \mu_2\)</span>, and assume this is true to construct the test. The overall common sample mean is <span class="math inline">\(\bar x = 328.07\)</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(Time<span class="sc">~</span>Envr,<span class="at">data=</span>mice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(Time<span class="sc">~</span>Envr,<span class="at">data=</span>mice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -677,7 +665,7 @@ mean in group Enrich    mean in group Std
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/mice-data-overall-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -690,11 +678,11 @@ mean in group Enrich    mean in group Std
 <br>
 <br>
 </p>
-<p>We’re exploring how far, on average, observations are from the mean (squared). So, variance has to be positive. If there is a difference between the group means, the first kind of variation (between the group means and the overall mean) will be much greater than the second kind of variance (between the data points and their group mean). We can test whether the first variance is bigger than the second using an F statistic, just like we did in the last section when we were comparing two variances:</p>
+<p>We’re exploring how far, on average, observations are from the mean (squared). So, variance has to be positive. If there is a difference between the group means, the first kind of variation (between the group means and the overall mean) will be much greater than the second kind of variance (between the data points and their group mean). We can test whether the first variance is bigger than the second using an <span class="math inline">\(F\)</span> statistic, just like we did in the last section when we were comparing two variances:</p>
 <p><span class="math display">\[
 F = \frac{\hbox{variance between group means and overall mean}}{\hbox{variance between the data points and their group mean}}
 \]</span></p>
-<p>If the variances are about equal, there’s no evidence of a difference between the group means–they vary as much from the overall mean as data points vary from their group mean. This will result in an F statistic of about 1. If there is a difference between the group means, the first kind of variation (between the group means and the overall mean) will be much greater than the second kind of variance (between the data points and their group mean). This will result in an F statistic greater than 1.</p>
+<p>If the variances are about equal, there’s no evidence of a difference between the group means–they vary as much from the overall mean as data points vary from their group mean. This will result in an <span class="math inline">\(F\)</span> statistic of about 1. If there is a difference between the group means, the first kind of variation (between the group means and the overall mean) will be much greater than the second kind of variance (between the data points and their group mean). This will result in an <span class="math inline">\(F\)</span> statistic greater than 1.</p>
 <div style="page-break-after: always;"></div>
 <p>For the mice data:</p>
 <p><br>
@@ -778,10 +766,12 @@ F = \frac{\hbox{variance between group means and overall mean}}{\hbox{variance b
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/wash-data-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
+</div>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>  Group.1     x
 1  ABSoap  92.5
@@ -799,14 +789,16 @@ F = \frac{\hbox{variance between group means and overall mean}}{\hbox{variance b
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/wash-data-means-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/unnamed-chunk-12-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Section-5-One-Pred-More-Than-Two-Levels_files/figure-html/wash-data-overall-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -849,13 +841,13 @@ F = \frac{\hbox{variance between group means and overall mean}}{\hbox{variance b
 <br>
 <br>
 </p>
-<p>This is still an estimate of variance, but it’s an estimate of <span class="math inline">\(\sigma^2/n\)</span>, because these are means. In order to be able to compare fairly to the error variance we must multiply by <span class="math inline">\(n\)</span> (only works with equal sample sizes) or, equivalently, take the sum from <span class="math inline">\(i=1\)</span> to <span class="math inline">\(n\)</span>:</p>
+<p>This is still an estimate of variance, but it’s an estimate of <span class="math inline">\(\sigma^2/n\)</span>, because these are means. In order to be able to compare fairly to the error variance we must multiply by <span class="math inline">\(n\)</span> (only works with equal sample sizes) or, equivalently, take the sum from <span class="math inline">\(j=1\)</span> to <span class="math inline">\(n\)</span>:</p>
 <p><br>
 <br>
 </p>
 <div style="page-break-after: always;"></div>
 <p>We can’t lose sight of what we’re interested in here: testing H<span class="math inline">\(_0: \mu_1 = \mu_2\)</span>. If H<span class="math inline">\(_0\)</span> is true, <span class="math inline">\(\bar y_1\)</span> and <span class="math inline">\(\bar y_2\)</span> should not be different from <span class="math inline">\(\bar y_{\cdot \cdot}\)</span>. This means that error variance should be about equal to model variance (both would estimate <span class="math inline">\(\sigma^2\)</span>). If H<span class="math inline">\(_0\)</span> is not true, model variance will be larger because of the deviations of the group averages from the grand average. If it’s much larger, this gives us evidence against H<span class="math inline">\(_0\)</span>.</p>
-<p>Why do we worry about three variances when we only use two (error and model) to get the F stat? It turn out that: <span class="math display">\[
+<p>Why do we worry about three variances when we only use two (error and model) to get the <span class="math inline">\(F\)</span> stat? It turn out that: <span class="math display">\[
 \hbox{Total SS } = \hbox{Model SS } + \hbox{ Error SS}
 \]</span> For the mice data:</p>
 <p><span class="math display">\[\begin{eqnarray*}
@@ -982,7 +974,7 @@ F = \frac{\hbox{MSModel}}{\hbox{MSError}} = \frac{171386}{1839} = 93.2
 <p>We still have assumptions: - Independence between and among groups - Responses/errors are approximately normal - Variability across groups is about equal</p>
 <p>We already know how to determine if <span class="math inline">\(F=93.2\)</span> is enough greater than 1 to determine there’s a difference–the <span class="math inline">\(F\)</span> distribution we used to test the equality of two variances in the last section. Our numerator and denominator degrees of freedom will be the Model <span class="math inline">\(df\)</span> and Error <span class="math inline">\(df\)</span>, respectively:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pf</span>(<span class="fl">93.2</span>,<span class="at">df1=</span><span class="dv">1</span>,<span class="at">df2=</span><span class="dv">12</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pf</span>(<span class="fl">93.2</span>,<span class="at">df1=</span><span class="dv">1</span>,<span class="at">df2=</span><span class="dv">12</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.232224e-07</code></pre>
 </div>
@@ -1029,7 +1021,7 @@ F = \frac{\hbox{MSModel}}{\hbox{MSError}} = \frac{171386}{1839} = 93.2
 <div style="page-break-after: always;"></div>
 <p>This is the only time we’ll do an ANOVA by hand! Let’s do the same in R.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(Time<span class="sc">~</span>Envr, <span class="at">data=</span>mice))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(Time<span class="sc">~</span>Envr, <span class="at">data=</span>mice))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -1060,7 +1052,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(Bacteria<span class="sc">~</span>Method,<span class="at">data=</span>handwash))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(Bacteria<span class="sc">~</span>Method,<span class="at">data=</span>handwash))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -1236,7 +1228,7 @@ run;</code></pre>
 <br>
 <br>
 </p>
-<p>The CRD may be combined with several different <em>treatment designs</em>. To explore the CRD in more detail, we’ll start with the simplest treatment design, the <em>one-way design</em>. The one-way design is so named because</p>
+<p>The CRD may be combined with several different <strong>treatment designs</strong>. To explore the CRD in more detail, we’ll start with the simplest treatment design, the <strong>one-way design</strong>. The one-way design is so named because</p>
 <p><br>
 <br>
 <br>

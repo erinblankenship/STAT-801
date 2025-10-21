@@ -560,6 +560,7 @@ The second option is what the thesis writer did--he randomly determined the angl
 
 ```{r}
 #| echo: false
+#| label: bases-plot
 
 library(tidyr)
 library(ggplot2)
@@ -570,7 +571,11 @@ bases2 <- bases %>% pivot_longer(cols=c('narrow','wide'), names_to='angle',value
 
 dotplot<-ggplot(bases2, aes(time)) + geom_dotplot(aes(color=angle),binwidth=0.1) + facet_grid(~angle)
 dotplot
+```
 
+```{r}
+#| echo: false
+#| label: diff-plot
 bases$diff<-bases$narrow-bases$wide
 
 diff.dot<-ggplot(bases, aes(diff)) + geom_dotplot(binwidth=0.01)
@@ -641,6 +646,7 @@ The $F$ distribution
 
 ```{r}
 #| echo: false
+#| label: F-distribution
 
 curve(df(x, df1 = 9, df2 = 9), from = 0, to = 8, main = "F(9,9) Distribution Density", xlab = "F-value", ylab = "Density")
 ```
