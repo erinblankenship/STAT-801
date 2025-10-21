@@ -13,6 +13,7 @@ book:
     - Section 2 Probability.qmd
     - Section 3 Sampling Distributions.qmd
     - Section 4 One Pred Two Levels.qmd
+    - Section 5 One Pred More Than Two Levels.qmd
    
   downloads: [pdf]    
 format: 

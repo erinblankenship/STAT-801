@@ -219,7 +219,7 @@ run;
 
 which gives
 
-![Output from proc freq](proc freq.jpg){fig-alt="The image shows the output from SAS proc freq, the procedure used to compare two proportions" width="774"}
+![Output from proc freq](proc%20freq.jpg){fig-alt="The image shows the output from SAS proc freq, the procedure used to compare two proportions" width="774"}
 
 Why do both R and SAS carry out the procedure like this? This is a method that can be used in situations where both the explanatory and response variable have any number ($\geq 2$) possible values. We'll see examples like this in the next chapter.
 
@@ -304,12 +304,9 @@ Let's do the analysis in R.
 \
 \
 
-
-
-
 ## Quantitative Response
 
-**Example:** Data were collected over a 10-year time span from a sample of 100 penguins that were randomly given either metal or electronic tags. Information collected includes number of chicks, survival over the decade, and length of time on foraging trips. Now let's focus on length of foraging trips. Longer foraging trips can jeopardize both breeding success and survival of chicks waiting for food. Suppose we're interested in estimating the difference in mean trip length between penguins with metal tags and those with electronic tags. 
+**Example:** Data were collected over a 10-year time span from a sample of 100 penguins that were randomly given either metal or electronic tags. Information collected includes number of chicks, survival over the decade, and length of time on foraging trips. Now let's focus on length of foraging trips. Longer foraging trips can jeopardize both breeding success and survival of chicks waiting for food. Suppose we're interested in estimating the difference in mean trip length between penguins with metal tags and those with electronic tags.
 
 What are the parameters?
 
@@ -332,13 +329,13 @@ What's different from the crows example?
 \
 \
 
-This means we will have to change our analysis approach. 
+This means we will have to change our analysis approach.
 
 Just like with the $t$ methods for single means, we need to check conditions to determine whether we can the $t$-distribution to construct tests and form confidence intervals for the difference in means.
 
-- Independence--both between and within groups
-- Check normality of each group separately (basically checking for extreme outliers)
-- If these are both met, then the standard error of $\bar x_1 - \bar x_2$ is $SE = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma^2_2}{n_2}}$ with $df=$ really complicated (you'll see we get non-integers in R/SAS--it's doing the complicated calculation). We'll use $\min(n_1-1, n_2-1)$ if we're not using R/SAS. We won't know $\sigma^2_1$ and $\sigma_2^2$, so we'll approximate the standard error using  $SE \approx \sqrt{\frac{s_1^2}{n_1} + \frac{s^2_2}{n_2}}$
+-   Independence--both between and within groups
+-   Check normality of each group separately (basically checking for extreme outliers)
+-   If these are both met, then the standard error of $\bar x_1 - \bar x_2$ is $SE = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma^2_2}{n_2}}$ with $df=$ really complicated (you'll see we get non-integers in R/SAS--it's doing the complicated calculation). We'll use $\min(n_1-1, n_2-1)$ if we're not using R/SAS. We won't know $\sigma^2_1$ and $\sigma_2^2$, so we'll approximate the standard error using $SE \approx \sqrt{\frac{s_1^2}{n_1} + \frac{s^2_2}{n_2}}$
 
 \
 \
@@ -346,25 +343,17 @@ Just like with the $t$ methods for single means, we need to check conditions to 
 
 \newpage
 
-As with tests for a single mean (and one proportion, and two proportions), our test statistic will have the usual form:
-$$
+As with tests for a single mean (and one proportion, and two proportions), our test statistic will have the usual form: $$
 \hbox{test statistic} = \frac{\hbox{observed value - hypothesized value}}{SE}
-$$
-In the case of two means, this is
-$$
+$$ In the case of two means, this is $$
 T = \frac{(\bar x_1 - \bar x_2) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
-$$
-When the null hypothesis is true and the conditions are met, $T$ has a $t$-distribution with $df=\min(n_1-1,n_2-1)$.
+$$ When the null hypothesis is true and the conditions are met, $T$ has a $t$-distribution with $df=\min(n_1-1,n_2-1)$.
 
-Confidence intervals will also have the same form:
-$$
+Confidence intervals will also have the same form: $$
 \hbox{observed statistic} \pm \hbox{multiplier} \times SE
-$$
-For this specific situation of comparing two independent means, this is
-$$
+$$ For this specific situation of comparing two independent means, this is $$
 (\bar x_1 - \bar x_2) \pm t^*_{df} \times \sqrt{\frac{s_1^2}{n_1} + \frac{s^2_2}{n_2}}
-$$
-and we'll again use $df=\min(n_1-1,n_2-1)$ (or let R/SAS calculate it for us).
+$$ and we'll again use $df=\min(n_1-1,n_2-1)$ (or let R/SAS calculate it for us).
 
 With two proportions, our SE changed depending on whether we were doing a hypothesis test or calculating a confidence interval. Here, it doesn't. Any guesses why?
 
@@ -372,8 +361,7 @@ With two proportions, our SE changed depending on whether we were doing a hypoth
 \
 \
 
-
-**Example:** There were 344 foraging trips made by penguins with a metal tag, and those trips had a sample mean of $\bar x_{M} =12.70$ days with standard deviation $s_{M}=3.71$ days. For those penguins with electronic tags, the mean was $\bar x_{E} = 11.60$ days with standard deviation $s_{E}=4.53$ days over 512 trips. 
+**Example:** There were 344 foraging trips made by penguins with a metal tag, and those trips had a sample mean of $\bar x_{M} =12.70$ days with standard deviation $s_{M}=3.71$ days. For those penguins with electronic tags, the mean was $\bar x_{E} = 11.60$ days with standard deviation $s_{E}=4.53$ days over 512 trips.
 
 \
 \
@@ -404,8 +392,6 @@ What kind of research question are we trying to answer? What does this imply abo
 \
 \
 
-
-
 Mean arrival date for the 167 times metal tagged penguins arrived was 7 December (37 days after 1 November) with standard deviation $s_{M}=38.77$ days, while mean arrival date for the 189 times electronic tagged penguins arrived was 21 November (21 days after 1 November) with standard deviation $s_{E}=27.50$
 
 \
@@ -419,10 +405,9 @@ Mean arrival date for the 167 times metal tagged penguins arrived was 7 December
 
 \newpage
 
-We can easily carry out $t$ tests and confidence intervals in R and SAS. But, we can't for the penguin data. R and SAS both require the whole data set, as opposed to summary statistics. 
+We can easily carry out $t$ tests and confidence intervals in R and SAS. But, we can't for the penguin data. R and SAS both require the whole data set, as opposed to summary statistics.
 
 **Example:** The data set may be found in Canvas: 'NutritionStudy.csv'. This data set gives nutrition levels in people's blood as well as information about their eating habits, and comes from a random sample of 315 US adults. Suppose we are interested in estimating the difference in mean beta carotene blood level between smokers and non-smokers. Let's start by reading the data into R.
-
 
 ```{r}
 NutritionStudy<-read.csv("NutritionStudy.csv",header=TRUE)
@@ -452,7 +437,7 @@ size_S<-sum(with(data=NutritionStudy, Smoke=="Yes"))
 size_S
 ```
 
-So now we have all the components we need to calculate the confidence interval. 
+So now we have all the components we need to calculate the confidence interval.
 
 \
 \
@@ -475,7 +460,6 @@ t.test(BetaPlasma~Smoke,data=NutritionStudy)
 
 We can change the confidence level easily
 
-
 ```{r}
 t.test(BetaPlasma~Smoke,data=NutritionStudy, conf.level=0.90)
 ```
@@ -491,17 +475,18 @@ Let's carry out a test by hand, to see how it compares to the output.
 
 ## Comparing Paired Means
 
-Everything we've done so far has assumed independence among observations. If we only had one group, it was just independence among observations. If we had two or more groups, it was independence between and within groups. Now, we'll turn our attention to a common situation: dependence between groups. Specifically, a particular dependency--pairing. This occurs  in before/after studies, other studies in which subjects are matched. For example, considering the price of a item purchased from two different retailers. 
+Everything we've done so far has assumed independence among observations. If we only had one group, it was just independence among observations. If we had two or more groups, it was independence between and within groups. Now, we'll turn our attention to a common situation: dependence between groups. Specifically, a particular dependency--pairing. This occurs in before/after studies, other studies in which subjects are matched. For example, considering the price of a item purchased from two different retailers.
 
 In these situations, we generally take the difference between the two values, and consider the difference as our observation. So, for example, if we want to compare cost of textbooks between the campus bookstore and Amazon, we'd randomly select a set of book titles, and find their price at both the bookstore and Amazon. We'd find the difference in price, and use those differences as our observations.
 
 Note that we're distinguishing between \textbf{difference in means} and \textbf{mean difference}.
+
 \begin{itemize} 
 \item Parameters:
 \item Observed Statistics:
-\end{itemize}  
+\end{itemize}
 
-Good news: we've already seen how to construct tests and confidence intervals here! We just use the same techniques we used for a single mean (Chapter 3), but on the differences. The changes come in the form of the hypotheses and interpretation of the confidence interval. 
+Good news: we've already seen how to construct tests and confidence intervals here! We just use the same techniques we used for a single mean (Chapter 3), but on the differences. The changes come in the form of the hypotheses and interpretation of the confidence interval.
 
 **Example:** Long distance runners contend that moderate exposure to ozone increases lung capacity. In investigate this possibility, a researcher exposed 12 rats to ozone at the rate of 2 ppm for a period of 30 days. The lung capacity of the rats was determined at the beginning of the study and again after 30 days of ozone exposure. The lung capacities (in mL) are in the file 'ozone.csv'.
 
@@ -562,16 +547,15 @@ t.test(ozone$Before,ozone$After,paired=TRUE,alternative="less")
 
 Let's write a couple of conclusions here.
 
-
 \newpage
 
-What are the consequences of ignoring pairing? Let's look at a different example. 
+What are the consequences of ignoring pairing? Let's look at a different example.
 
 **Example:** Suppose you are playing baseball and hit a hard line drive. You want to turn a single into a double. Does the path you take to round first base make a difference? A masters thesis way back in 1970 considered the difference between a "narrow angle" and a "wide angle" around first base. Suppose we have 22 baseball players who have volunteered to participate. There are a couple ways we could design an experiment to see if there is a difference.
 
- - Randomly assign 11 players to run a wide angle and 11 players to run a narrow angle. Problems: some players may be faster than others. Ideally, randomization will equally distribute the speedy runners between the two groups, but there is no guarantee. Speed could be a confounding variable.
- - Have each of the 22 runners run both angles, with the angle run first randomized using a coin. This allows each player to serve as their own control.
-	
+-   Randomly assign 11 players to run a wide angle and 11 players to run a narrow angle. Problems: some players may be faster than others. Ideally, randomization will equally distribute the speedy runners between the two groups, but there is no guarantee. Speed could be a confounding variable.
+-   Have each of the 22 runners run both angles, with the angle run first randomized using a coin. This allows each player to serve as their own control.
+
 The second option is what the thesis writer did--he randomly determined the angle the player would take first. He then used a stopwatch the time the run from going from a spot 35 feet past home to a spot 15 feet before 2nd base. After a rest period, the runner then ran the second angle. This controls for runner-to-runner variability. It's important to randomize the order of the treatments, where possible! (This isn't possible in before-and-after type studies.)
 
 ```{r}
@@ -617,11 +601,11 @@ t.test(time~angle,data=bases2)
 
 Often it is useful to test if variances from independent populations are different. For example,
 
-- a geneticist wants to test equality of the genotypic variances of kernel weight of two different corn populations
+-   a geneticist wants to test equality of the genotypic variances of kernel weight of two different corn populations
 
-- an engineer is interested in comparing the process variance of two different types of production systems used to make a electronic component
+-   an engineer is interested in comparing the process variance of two different types of production systems used to make a electronic component
 
-- the two-sample $t$-test is based on the assumption that the variances of the two populations are equal
+-   the two-sample $t$-test is based on the assumption that the variances of the two populations are equal
 
 Assume the data from both populations follow a normal distribution with different means and possibly different variances. We want to test
 
@@ -639,7 +623,7 @@ A natural approach would be to take samples of $n_1$ and $n_2$ observations from
 
 \newpage
 
-Sir R. A. Fisher showed that the ratio of two independent $\chi^2$ distributions has an $F$ distribution with $(n_1-1)$ and $(n_2-1)$ degrees of freedom. Specifically, 
+Sir R. A. Fisher showed that the ratio of two independent $\chi^2$ distributions has an $F$ distribution with $(n_1-1)$ and $(n_2-1)$ degrees of freedom. Specifically,
 
 \
 \
@@ -652,8 +636,8 @@ Under H$_0: \sigma^2_1 = \sigma^2_2$ then
 \
 
 The $F$ distribution
- 
-- is non-negative, unimodal, and right skewed
+
+-   is non-negative, unimodal, and right skewed
 
 ```{r}
 #| echo: false
@@ -661,15 +645,15 @@ The $F$ distribution
 curve(df(x, df1 = 9, df2 = 9), from = 0, to = 8, main = "F(9,9) Distribution Density", xlab = "F-value", ylab = "Density")
 ```
 
-- the shape of the distribution depends on the numerator and denominator degrees of freedom
+-   the shape of the distribution depends on the numerator and denominator degrees of freedom
 
 So, to test H$_0: \sigma_1^2 = \sigma_2^2$ versus H$_a: \sigma_1^2 \neq \sigma_2^2$, we can
 
-- Assume that $S_1^2$ is the larger of the two sample variaces
+-   Assume that $S_1^2$ is the larger of the two sample variaces
 
-- Use $S_1^2/S_2^2$ as a test statistic. Under H$_0$, this ratio will follow an $F$ distribution with $n_1-1$ and $n_2-1$ degrees of freedom
+-   Use $S_1^2/S_2^2$ as a test statistic. Under H$_0$, this ratio will follow an $F$ distribution with $n_1-1$ and $n_2-1$ degrees of freedom
 
-- Use the $F$ distribution to see if $s_1^2/s_2^2$ is enough bigger than 1 to convince us the null hypothesis is not true (always a right-tail test!)
+-   Use the $F$ distribution to see if $s_1^2/s_2^2$ is enough bigger than 1 to convince us the null hypothesis is not true (always a right-tail test!)
 
 **Example:** The writings of different authors can be partially characterized by the variablity in the lengths of their sentences. Two manuscripts, $A$ and $B$, are found by a historian and they want to know whether they have the same author. Fifteen sentences from each are chosen at random, and word counts per sentence are recorded. The historian finds $s_A^2= 0.114$ and $s_B^2= 0.143$.
 
@@ -699,6 +683,7 @@ NutritionStudy<-read.csv("NutritionStudy.csv",header=TRUE)
 
 head(NutritionStudy)
 ```
+
 The Quetelet index is a measure of body mass (BMI). Suppose we are interested in whether smokers and nonsmokers have the same variability of BMI scores.
 
 \
