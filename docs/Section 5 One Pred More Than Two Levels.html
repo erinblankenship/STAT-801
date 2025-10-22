@@ -228,13 +228,13 @@ window.Quarto = {
   <li><a href="#model-adequacy" id="toc-model-adequacy" class="nav-link" data-scroll-target="#model-adequacy"><span class="header-section-number">5.3.3</span> Model Adequacy</a></li>
   <li><a href="#power-for-the-completely-randomized-design" id="toc-power-for-the-completely-randomized-design" class="nav-link" data-scroll-target="#power-for-the-completely-randomized-design"><span class="header-section-number">5.3.4</span> Power for the Completely Randomized Design</a></li>
   </ul></li>
-  <li><a href="#block-designs" id="toc-block-designs" class="nav-link" data-scroll-target="#block-designs"><span class="header-section-number">5.4</span> Block Designs</a></li>
-  <li><a href="#the-randomized-complete-block-design" id="toc-the-randomized-complete-block-design" class="nav-link" data-scroll-target="#the-randomized-complete-block-design"><span class="header-section-number">5.5</span> The Randomized Complete Block Design</a>
+  <li><a href="#block-designs" id="toc-block-designs" class="nav-link" data-scroll-target="#block-designs"><span class="header-section-number">5.4</span> Block Designs</a>
   <ul class="collapse">
-  <li><a href="#selecting-blocks" id="toc-selecting-blocks" class="nav-link" data-scroll-target="#selecting-blocks"><span class="header-section-number">5.5.1</span> Selecting Blocks</a></li>
-  <li><a href="#rcbd-model-and-analysis" id="toc-rcbd-model-and-analysis" class="nav-link" data-scroll-target="#rcbd-model-and-analysis"><span class="header-section-number">5.5.2</span> RCBD Model and Analysis</a></li>
+  <li><a href="#the-randomized-complete-block-design" id="toc-the-randomized-complete-block-design" class="nav-link" data-scroll-target="#the-randomized-complete-block-design"><span class="header-section-number">5.4.1</span> The Randomized Complete Block Design</a></li>
+  <li><a href="#selecting-blocks" id="toc-selecting-blocks" class="nav-link" data-scroll-target="#selecting-blocks"><span class="header-section-number">5.4.2</span> Selecting Blocks</a></li>
+  <li><a href="#rcbd-model-and-analysis" id="toc-rcbd-model-and-analysis" class="nav-link" data-scroll-target="#rcbd-model-and-analysis"><span class="header-section-number">5.4.3</span> RCBD Model and Analysis</a></li>
+  <li><a href="#did-blocking-work" id="toc-did-blocking-work" class="nav-link" data-scroll-target="#did-blocking-work"><span class="header-section-number">5.4.4</span> Did Blocking Work?</a></li>
   </ul></li>
-  <li><a href="#did-blocking-work" id="toc-did-blocking-work" class="nav-link" data-scroll-target="#did-blocking-work"><span class="header-section-number">5.6</span> Did Blocking Work?</a></li>
   </ul>
 </nav>
     </div>
@@ -1673,7 +1673,7 @@ run;</code></pre>
 </p>
 <p>and two different contrast statements we could write:</p>
 <div style="page-break-after: always;"></div>
-<pre><code>    proc glimmix data=donut1;
+<pre><code>    proc glimmix data=donut;
       class type;
       model absorb=type;
       contrast "animal vs veg" type 1 1 -1 -1;
@@ -1934,7 +1934,7 @@ run;</code></pre>
 </p>
 <p>Examining residuals should be an automatic part of the analysis of variance, and can be used to check the assumptions of common variance and normality of the error term. The assumptions can be checked using a visual inspection or formally through tests, and SAS makes it very easy to do so.</p>
 <p>There’s a lot of code here, but we’ll examine it piece-by-piece.</p>
-<pre><code>    proc glimmix data=donut1 plot=residualpanel;
+<pre><code>    proc glimmix data=donut plot=residualpanel;
       class type;
       model absorb=type; 
       random _residual_/group=type;
@@ -2028,7 +2028,7 @@ run;</code></pre>
 <section id="power-for-the-completely-randomized-design" class="level3" data-number="5.3.4">
 <h3 data-number="5.3.4" class="anchored" data-anchor-id="power-for-the-completely-randomized-design"><span class="header-section-number">5.3.4</span> Power for the Completely Randomized Design</h3>
 <p>With multiple comparisons, we talked about Type I error and its probability. We defined Type I error as rejecting the null hypothesis when it is, in fact, true. If P(Type I error) = <span class="math inline">\(\alpha\)</span>, then P(no Type I error) = <span class="math inline">\(1-\alpha\)</span>.</p>
-<p>There is another kind of error – Type II error. A Type II error occurs when H<span class="math inline">\(_0\)</span> is not rejected, but H<span class="math inline">\(_0\)</span> is actually false. In earlier courses, we summarized these two types of errors in a table:</p>
+<p>There is another kind of error – Type II error. A Type II error occurs when H<span class="math inline">\(_0\)</span> is not rejected, but H<span class="math inline">\(_0\)</span> is actually false. Earlier this semester, we summarized these two types of errors in a table:</p>
 <p><br>
 <br>
 <br>
@@ -2044,7 +2044,7 @@ run;</code></pre>
 <br>
 <br>
 </p>
-<p>Earlier in STAT 801, as well as other classes, we’ve said that we can “set” the probability of a Type I error. Anytime we say we’ll reject H<span class="math inline">\(_0\)</span> if the p-value <span class="math inline">\(&lt; \alpha\)</span>, we’re setting P(Type I error) = <span class="math inline">\(\alpha\)</span>. What about Type II error? We generally call the probability of a Type II error <span class="math inline">\(\beta\)</span>, P(Type II error) = <span class="math inline">\(\beta\)</span>. The problem is we can’t “set” both <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\alpha\)</span> without some other complications.</p>
+<p>Earlier in STAT 801 we’ve said that we can “set” the probability of a Type I error. Anytime we say we’ll reject H<span class="math inline">\(_0\)</span> if the p-value <span class="math inline">\(&lt; \alpha\)</span>, we’re setting P(Type I error) = <span class="math inline">\(\alpha\)</span>. What about Type II error? We generally call the probability of a Type II error <span class="math inline">\(\beta\)</span>, P(Type II error) = <span class="math inline">\(\beta\)</span>. The problem is we can’t “set” both <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\alpha\)</span> without some other complications.</p>
 <p>We are typically interested in the <strong>power</strong> of a test:</p>
 <p><br>
 <br>
@@ -2259,9 +2259,8 @@ run;</code></pre>
 <li><p>Organize the experimental units into subsets (blocks) according to gradient</p></li>
 <li><p>Restrict the randomization so that each treatment is assigned to one or fewer (zero) experimental units in each block.</p></li>
 </ol>
-</section>
-<section id="the-randomized-complete-block-design" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="the-randomized-complete-block-design"><span class="header-section-number">5.5</span> The Randomized Complete Block Design</h2>
+<section id="the-randomized-complete-block-design" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="the-randomized-complete-block-design"><span class="header-section-number">5.4.1</span> The Randomized Complete Block Design</h3>
 <p>The simplest block design is the <strong>randomized complete block design</strong> (RCBD). In this design</p>
 <p><br>
 <br>
@@ -2406,8 +2405,9 @@ run;</code></pre>
 <br>
 </p>
 <div style="page-break-after: always;"></div>
-<section id="selecting-blocks" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="selecting-blocks"><span class="header-section-number">5.5.1</span> Selecting Blocks</h3>
+</section>
+<section id="selecting-blocks" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="selecting-blocks"><span class="header-section-number">5.4.2</span> Selecting Blocks</h3>
 <p>Remember that the RCBD is an <strong>experimental</strong> design, not a treatment design. It can be used with any treatment design. So, we might see RCBD layouts that look like:</p>
 <div class="center">
 <table class="caption-top table">
@@ -2556,8 +2556,8 @@ run;</code></pre>
 </ul>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="rcbd-model-and-analysis" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="rcbd-model-and-analysis"><span class="header-section-number">5.5.2</span> RCBD Model and Analysis</h3>
+<section id="rcbd-model-and-analysis" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="rcbd-model-and-analysis"><span class="header-section-number">5.4.3</span> RCBD Model and Analysis</h3>
 <p>Let <span class="math inline">\(y_{ij}\)</span> be</p>
 <p><br>
 <br>
@@ -2814,11 +2814,9 @@ run;</code></pre>
     Spergon    Control      2.6000      1.4711       16       1.77      0.0962    0.2680
     </code></pre>
 <p>The results are the same whether we used fixed blocks or random blocks. This is because our data are <strong>balanced</strong>–we had the same number of observations in each block, and all treatments appear in all blocks. If our data had not been balanced, the results would be different.</p>
-<p><strong>Did Blocking Work?</strong></p>
 </section>
-</section>
-<section id="did-blocking-work" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="did-blocking-work"><span class="header-section-number">5.6</span> Did Blocking Work?</h2>
+<section id="did-blocking-work" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="did-blocking-work"><span class="header-section-number">5.4.4</span> Did Blocking Work?</h3>
 <p>When we treated blocks as fixed effects, we get a p-value associated with block but it is completely meaningless because there is no valid hypothesis test for evaluating the effect of block. However, we can check the <strong>efficiency</strong> of the block design relative to a competing design.</p>
 <p>Suppose we have <span class="math inline">\(t\)</span> treatments and <span class="math inline">\(rt\)</span> experimental units available for our experiment. We have two possible experimental designs:</p>
 <ul>
@@ -2892,6 +2890,7 @@ run;</code></pre>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
