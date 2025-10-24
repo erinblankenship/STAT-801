@@ -490,6 +490,7 @@ Note that we're distinguishing between **difference in means** and **mean differ
 \
 
 
+
 Good news: we've already seen how to construct tests and confidence intervals here! We just use the same techniques we used for a single mean (Chapter 3), but on the differences. The changes come in the form of the hypotheses and interpretation of the confidence interval.
 
 **Example:** Long distance runners contend that moderate exposure to ozone increases lung capacity. In investigate this possibility, a researcher exposed 12 rats to ozone at the rate of 2 ppm for a period of 30 days. The lung capacity of the rats was determined at the beginning of the study and again after 30 days of ozone exposure. The lung capacities (in mL) are in the file 'ozone.csv'.
