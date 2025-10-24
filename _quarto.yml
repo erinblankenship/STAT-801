@@ -2,7 +2,9 @@ project:
   type: book
   output-dir: docs
 
-
+execute:
+  freeze: auto  # re-render only when source changes
+  
 editor: visual
 book: 
   title: Stat 801A Notes
@@ -12,10 +14,12 @@ book:
     - Section 1 Introduction.qmd
     - Section 2 Probability.qmd
     - Section 3 Sampling Distributions.qmd
-    - Section 4 One Pred Two Levels.qmd
-    - Section 5 One Pred More Than Two Levels.qmd
+    - Section4-One-Pred-Two-Levels.qmd
+    - Section5-One-Pred-More-Than-Two-Levels.qmd
    
   downloads: [pdf]    
+
+
 format: 
   html: default
   pdf:  
@@ -28,4 +32,4 @@ format:
       - top=20mm
       - left=15mm
       - right=10mm
-      
+   
